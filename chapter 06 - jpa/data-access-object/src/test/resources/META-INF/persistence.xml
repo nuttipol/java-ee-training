@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+   
+     <persistence-unit name="jpa_local" transaction-type="RESOURCE_LOCAL">
+    	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    	
+    	<class>my.example.jpa.lab01.Address</class>
+		<class>my.example.jpa.lab01.Alien</class>
+		<class>my.example.jpa.lab01.MaritalStatus</class>
+		<class>my.example.jpa.lab01.People</class>
+		    
+		<class>my.example.jpa.lab02.Parent</class>
+		<class>my.example.jpa.lab02.ParentId</class>
+		<class>my.example.jpa.lab02.ParentType</class>
+		    
+		<class>my.example.jpa.lab03.Person</class>
+		<class>my.example.jpa.lab03.Programmer</class>
+		<class>my.example.jpa.lab03.Tester</class>
+		    
+		<class>my.example.jpa.lab04.Labtop</class>
+		<class>my.example.jpa.lab04.Locker</class>
+		<class>my.example.jpa.lab04.Mobile</class>
+		<class>my.example.jpa.lab04.Student</class>
+		    
+		<class>my.example.jpa.lab05.Agent</class>
+		<class>my.example.jpa.lab05.Club</class>
+		<class>my.example.jpa.lab05.Footballer</class>
+		<class>my.example.jpa.lab05.Nation</class>
+		    
+		<class>my.example.jpa.lab06.Movie</class>
+		<class>my.example.jpa.lab06.SuperHero</class>
+		    
+		<class>my.example.jpa.lab07.Cabinet</class>
+		<class>my.example.jpa.lab07.CabinetUser</class>
+		<class>my.example.jpa.lab07.Privilege</class>
+		<class>my.example.jpa.lab07.User</class>
+		    
+		<class>my.example.jpa.lab08.MovieMapping</class>
+    	
+        <properties>
+			<property name="eclipselink.logging.level" value="INFO" />
+		 	 
+		 	<!-- 
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.util.DatabaseManagerSwing" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" />
+            <property name="javax.persistence.jdbc.user" value="SA" />
+            <property name="javax.persistence.jdbc.password" value="" />
+          	-->
+          	
+          	<!-- 
+          	<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite::memory:" />
+			 -->
+			
+          	<property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlite:test.db" />
+			 
+            <property name="javax.persistence.schema-generation.database.action" value="none" />
+        </properties>
+    </persistence-unit>
+    
+</persistence>

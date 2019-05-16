@@ -1,0 +1,180 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>my.example</groupId>
+	<artifactId>ws-server-jax-ws</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ws-server-jax-ws</name>
+    
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- Maven Build Plugin Properties -->
+        <my.maven.compiler>3.0</my.maven.compiler>
+        <my.maven.war>2.4</my.maven.war>
+
+		<!-- Java Properties -->
+		<my.java>1.7</my.java>
+
+		<!-- Provided Scope  -->
+		<my.lombok>1.16.6</my.lombok>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${my.maven.compiler}</version>
+				<configuration>
+					<source>${my.java}</source>
+					<target>${my.java}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+	</build>
+	
+	<profiles> 
+		<profile>
+			<id>javaee6-container</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<property>
+					<name>javaee6-container</name>
+					<value>true</value>
+				</property>
+			</activation> 
+			<properties>
+				<my.web.inf>src/test/resources/javaee6</my.web.inf>
+			</properties>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+			                <groupId>org.apache.maven.plugins</groupId>
+			                <artifactId>maven-war-plugin</artifactId>
+			                <version>${my.maven.war}</version>
+			                <configuration>
+			                    <failOnMissingWebXml>false</failOnMissingWebXml>
+			                    <attachClasses>true</attachClasses>
+			                    <archiveClasses>true</archiveClasses>
+			                    <archive>
+			                        <manifest>
+			                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+			                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+			                        </manifest>
+			                    </archive>
+			                </configuration>
+			                <executions>
+								<execution>
+									<id>default-war</id>
+									<phase>none</phase>
+								</execution>
+								<execution>
+									<id>javaee6-container</id>
+									<goals>
+										<goal>war</goal>
+									</goals>
+									<configuration>
+										<classifier>javaee6-container</classifier>
+										<warSourceExcludes>WEB-INF/**</warSourceExcludes>
+										<webResources>
+											<webResource>
+												<directory>${my.web.inf}</directory>
+												<targetPath>WEB-INF</targetPath>
+											</webResource>
+										</webResources>
+									</configuration>
+								</execution>
+							</executions>
+			            </plugin>
+					</plugins>
+				</pluginManagement>
+			</build> 
+		</profile>
+		
+		<profile>
+			<id>tomcat80</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<property>
+					<name>tomcat80</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<properties>
+				<!-- Scope compile -->
+				<my.com.sun.xml.ws.jaxws-rt>2.2.10</my.com.sun.xml.ws.jaxws-rt>
+				<my.metro.version>2.3.1</my.metro.version>
+			</properties>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-war-plugin</artifactId>
+							<version>${my.maven.war}</version>
+							<configuration>
+			                    <failOnMissingWebXml>false</failOnMissingWebXml>
+			                    <attachClasses>true</attachClasses>
+			                    <archiveClasses>true</archiveClasses>
+			                    <archive>
+			                        <manifest>
+			                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+			                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+			                        </manifest>
+			                    </archive>
+			                </configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+			<dependencyManagement>
+				<dependencies>
+					<dependency>
+						<groupId>org.glassfish.metro</groupId>
+						<artifactId>webservices-rt</artifactId>
+						<version>${my.metro.version}</version>
+					</dependency>
+					<!-- 
+					<dependency>
+						<groupId>com.sun.xml.ws</groupId>
+						<artifactId>jaxws-rt</artifactId>
+						<version>${my.com.sun.xml.ws.jaxws-rt}</version>
+					</dependency>
+					 -->
+				</dependencies>
+			</dependencyManagement>
+			<dependencies>		
+				<dependency>
+					<groupId>org.glassfish.metro</groupId>
+					<artifactId>webservices-rt</artifactId>
+					<scope>compile</scope>
+				</dependency>
+					<!--
+					<dependency>
+						<groupId>com.sun.xml.ws</groupId>
+						<artifactId>jaxws-rt</artifactId>
+						<scope>compile</scope>
+					</dependency> 
+				 -->
+			</dependencies>
+		</profile>
+	</profiles>
+</project>

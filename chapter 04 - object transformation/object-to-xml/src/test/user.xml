@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<user>
+    <id>1</id>
+    <name>Nuttipol</name>
+    <department>
+        <id>1</id>
+        <name>SDD</name>
+    </department>
+    <roles>
+        <role>
+            <id>1</id>
+            <name>Admin</name>
+        </role>
+        <role>
+            <id>2</id>
+            <name>User</name>
+        </role>
+    </roles>
+</user>

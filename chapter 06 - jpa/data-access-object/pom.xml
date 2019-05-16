@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>my.example</groupId>
+	<artifactId>dao</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.shade.plugin>3.2.1</maven.shade.plugin>
+
+		<!-- Java Properties -->
+		<my.java>1.7</my.java>
+		<my.maven.compiler>3.0</my.maven.compiler>
+		
+		<!-- Complied Scope  -->
+		<my.example.jpa>0.0.1-SNAPSHOT</my.example.jpa>
+		
+		<!-- Provided Scope  -->
+		<my.lombok>1.16.4</my.lombok>
+		
+		<!-- Test Scope -->
+		<my.junit>4.12</my.junit>
+		<my.org.dbunit>2.6.0</my.org.dbunit> 
+		<my.org.hsqldb>2.4.1</my.org.hsqldb>
+		<my.sqlite-jdbc>3.25.2</my.sqlite-jdbc>
+	</properties>
+
+	<dependencies>
+		<!-- Complied Scope  -->
+		<dependency>
+			<groupId>my.example</groupId>
+			<artifactId>jpa</artifactId>
+			<version>${my.example.jpa}</version>
+			<scope>compile</scope>
+		</dependency>  
+	
+		<!-- Provided Scope  -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Test Scope -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.dbunit</groupId>
+		    <artifactId>dbunit</artifactId>
+		    <version>${my.org.dbunit}</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.hsqldb</groupId>
+		    <artifactId>hsqldb</artifactId>
+		    <version>${my.org.hsqldb}</version>
+		    <scope>test</scope>
+		</dependency> 
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>${my.sqlite-jdbc}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build> 
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${my.maven.compiler}</version>
+				<configuration>
+					<source>${my.java}</source>
+					<target>${my.java}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

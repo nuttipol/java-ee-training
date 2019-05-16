@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>my.example</groupId>
+	<artifactId>ws-client-rest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ws-client-rest</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Java Properties -->
+		<my.java>1.7</my.java>
+		<my.maven.compiler>3.0</my.maven.compiler>
+		<!-- Compile Scope -->
+		<my.jersey-client>2.28</my.jersey-client>
+		<my.object-to-xml>0.0.1-SNAPSHOT</my.object-to-xml>
+		<my.object-to-json>0.0.1-SNAPSHOT</my.object-to-json>
+		
+		<!-- Provided Scope -->
+		<my.lombok>1.16.6</my.lombok>
+	</properties>
+
+	<dependencies>
+		<!-- Compile Scope --> 
+		<dependency> 
+		    <groupId>org.glassfish.jersey.core</groupId>
+		    <artifactId>jersey-client</artifactId>
+		    <version>${my.jersey-client}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.inject</groupId>
+		    <artifactId>jersey-hk2</artifactId>
+		    <version>${my.jersey-client}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>my.example</groupId>
+			<artifactId>object-to-json</artifactId>
+			<version>${my.object-to-json}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>my.example</groupId>
+			<artifactId>object-to-xml</artifactId>
+			<version>${my.object-to-xml}</version>
+			<scope>compile</scope>
+		</dependency>
+		 
+		<!-- Provided Scope -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build> 
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${my.maven.compiler}</version>
+				<configuration>
+					<source>${my.java}</source>
+					<target>${my.java}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
