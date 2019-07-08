@@ -41,7 +41,7 @@
 		<class>my.example.jpa.lab08.MovieMapping</class>
     	
         <properties>
-			<property name="eclipselink.logging.level" value="INFO" />
+			<property name="eclipselink.logging.level" value="FINE" />
 			
 			<!--
 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.util.DatabaseManagerSwing" />

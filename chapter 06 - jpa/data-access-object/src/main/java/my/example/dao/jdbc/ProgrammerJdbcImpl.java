@@ -88,4 +88,9 @@ public class ProgrammerJdbcImpl implements ProgrammerDao {
 		return null;
 	}
 
+	@Override
+	public Programmer insert(Programmer programmer) throws SQLException {
+		return null;
+	}
+
 }

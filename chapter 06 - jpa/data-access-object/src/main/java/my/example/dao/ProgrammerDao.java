@@ -9,4 +9,5 @@ public interface ProgrammerDao {
 	public Programmer find(long id) throws SQLException;
 	public List<Programmer> findByName(String name)throws SQLException;
 	public List<Programmer> findByCriteria(Programmer programmer);
+	public Programmer insert(Programmer programmer) throws SQLException;
 }

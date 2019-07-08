@@ -1,5 +1,6 @@
 package my.example.dao.jpa;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +51,11 @@ public class ProgrammerJpaImpl implements ProgrammerDao {
 		TypedQuery<Programmer> query = em.createQuery(cq);
 		
 		return query.getResultList();
+	}
+
+	@Override
+	public Programmer insert(Programmer programmer) throws SQLException {
+		return em.merge(programmer);
 	}
 
 }

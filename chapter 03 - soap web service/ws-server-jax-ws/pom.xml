@@ -146,34 +146,34 @@
 				</pluginManagement>
 			</build>
 			<dependencyManagement>
-				<dependencies>
+				<dependencies><!-- 
 					<dependency>
 						<groupId>org.glassfish.metro</groupId>
 						<artifactId>webservices-rt</artifactId>
 						<version>${my.metro.version}</version>
 					</dependency>
-					<!-- 
+					 -->
 					<dependency>
 						<groupId>com.sun.xml.ws</groupId>
 						<artifactId>jaxws-rt</artifactId>
 						<version>${my.com.sun.xml.ws.jaxws-rt}</version>
 					</dependency>
-					 -->
+					
 				</dependencies>
 			</dependencyManagement>
 			<dependencies>		
+					<!--
 				<dependency>
 					<groupId>org.glassfish.metro</groupId>
 					<artifactId>webservices-rt</artifactId>
 					<scope>compile</scope>
 				</dependency>
-					<!--
+				 -->
 					<dependency>
 						<groupId>com.sun.xml.ws</groupId>
 						<artifactId>jaxws-rt</artifactId>
 						<scope>compile</scope>
 					</dependency> 
-				 -->
 			</dependencies>
 		</profile>
 	</profiles>
