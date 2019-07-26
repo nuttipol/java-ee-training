@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Alien  {
  
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private int id;
 

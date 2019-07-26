@@ -24,7 +24,10 @@
 		<class>my.example.jpa.lab04.Locker</class>
 		<class>my.example.jpa.lab04.Mobile</class>
 		<class>my.example.jpa.lab04.Student</class>
-		    
+		
+		<class>my.example.jpa.lab04.StudentParent</class>
+		<class>my.example.jpa.lab04.StudentParentAge</class>
+		   
 		<class>my.example.jpa.lab05.Agent</class>
 		<class>my.example.jpa.lab05.Club</class>
 		<class>my.example.jpa.lab05.Footballer</class>

@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
 import my.example.jpa.lab01.Address;
+import my.example.jpa.lab01.Alien;
 import my.example.jpa.lab01.MaritalStatus;
 import my.example.jpa.lab01.People;
 
@@ -32,12 +33,12 @@ public class Lab01Test {
 	}
 	
 	@Test
-	public void testService() throws Exception {
-		em.getTransaction().begin();
-		
+	public void testPeople() throws Exception {
 		EntityTransaction tx 	= 	em.getTransaction();
 
-		People people = new People(); 
+		tx.begin();
+		
+		People nuttipol = new People(); 
 		Address address = new Address();
 		Calendar calendar = new GregorianCalendar(1977,11,22);
 		
@@ -45,35 +46,65 @@ public class Lab01Test {
 		address.setCity("Bangkok");
 		address.setCountry("Thailand");
 		
-		people.setName("Nuttipol");
-		people.setPersonalId("1234567890123");
-		people.setAddress(address);
-		people.setBirthDate(calendar.getTime());
-		people.setMaritalStatus(MaritalStatus.SINGLE);
+		nuttipol.setName("Nuttipol");
+		nuttipol.setPersonalId("1234567890123");
+		nuttipol.setAddress(address);
+		nuttipol.setBirthDate(calendar.getTime());
+		nuttipol.setMaritalStatus(MaritalStatus.SINGLE);
 		
-    	em.persist(people); 
+		People nextPeople = new People(); 
+		nextPeople.setName("Steve");
+		nextPeople.setPersonalId("123456780456");
+		
+    	em.persist(nuttipol); 
+    	em.persist(nextPeople); 
     	
         tx.commit();
         
-		log.info("people.version : " + people.getVersion() );
-
-		People p2 = em.find(People.class, 1);
-        
-		log.info("people : " + p2 );
+		Assert.assertEquals(1, nuttipol.getVersion());
+		Assert.assertEquals(1, nextPeople.getVersion());
 		
-		em.refresh(p2);
+		Assert.assertEquals(3, nuttipol.getId());
+		Assert.assertEquals(4, nextPeople.getId());
+		
+		People people2 = em.find(People.class, 3);
+        
+		log.info("people.id : " + people2.getId() );
+		
+		em.refresh(people2);
 		
 		tx.begin();
 		
-		p2.setThaiCitizen(true);
+		people2.setThaiCitizen(true);
 		
-		em.persist(p2);
+		em.persist(people2);
+		
 		tx.commit();
 		
-		log.info("people.version : " + p2.getVersion() );
-		
-		Assert.assertEquals(2, p2.getVersion());
+		Assert.assertEquals(2, people2.getVersion());
 		
 		Assert.assertEquals(1, em.createQuery("Select m from People m where m.maritalStatus.code = 'S' ", People.class).getResultList().size());
 	}
+	
+	@Test
+	public void testAlien() throws Exception {
+		EntityTransaction tx 	= 	em.getTransaction();
+
+		tx.begin();
+		
+		Alien asgardian = new Alien(); 
+		asgardian.setName("Thor");
+		Alien eternal = new Alien(); 
+		eternal.setName("Thanos");
+		
+    	em.persist(asgardian); 
+    	em.persist(eternal); 
+    	
+        tx.commit();
+        
+		Assert.assertEquals(1, asgardian.getId());
+		Assert.assertEquals(2, eternal.getId());
+
+	}
+	 
 }

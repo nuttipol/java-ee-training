@@ -9,10 +9,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
+import my.example.jpa.lab02.ParentId;
+import my.example.jpa.lab02.ParentType;
 import my.example.jpa.lab04.Labtop;
 import my.example.jpa.lab04.Locker;
 import my.example.jpa.lab04.Mobile;
 import my.example.jpa.lab04.Student;
+import my.example.jpa.lab04.StudentParent;
+import my.example.jpa.lab04.StudentParentAge;
 
 @Slf4j
 public class Lab04Test {
@@ -30,51 +34,52 @@ public class Lab04Test {
 	
 	@Test
 	public void testService() throws Exception {
-		em.getTransaction().begin();
 		
 		EntityTransaction tx 	= 	em.getTransaction();
 
-		Labtop lt = new Labtop("SONY");
-		Locker lk = new Locker("L1");
-		
-		Student student = new Student();
-		student.setName("Nuttipol");
-		student.setComputer(lt);
-		student.setLocker(lk);
-		
-//		em.persist(lt);			
-		em.persist(lk);				//	non cascade with locker']
-		student = em.merge(student);
-		
-    	log.info("persist student.getId() : "+student.getId() );
-    	
-    	Mobile mobile1	= new Mobile("ASUS");
-    	em.persist(mobile1);
-    	Mobile mobile2	= new Mobile("LENOVO");
-    	em.persist(mobile2);
-
-    	tx.commit();
- 
-		log.info("persist student : " + student );
-		log.info("persist phone : " + mobile1 );
-		log.info("persist phone : " + mobile2 );
-		
 		tx.begin();
 		
+		Mobile asusMobile	= new Mobile("ASUS");
+    	Mobile samsungMobile	= new Mobile("LENOVO");
+    	
+		Labtop labtop1 = new Labtop("SONY");
 		Labtop labtop2 = new Labtop("DELL");
 		
-		em.persist(labtop2);
-		
-        tx.commit();
+		Locker locker1 = new Locker("L1");
 
-		log.info("persist labtop : "+labtop2 );
-    
+		Student student = new Student();
+		student.setName("Nuttipol");
+		student.setComputer(labtop1);
+		student.setLocker(locker1);
+		
+		em.persist(asusMobile);
+    	em.persist(samsungMobile);
+		
+    	em.persist(locker1);	//	must persist 
+//		em.persist(labtop1);	// 	no need persist
+    	em.persist(labtop2);
+		student = em.merge(student);
+		
+		log.info("persist student.getId() : "+student.getId() );
+    	log.info("persist student.getLocker().getId() : "+student.getLocker().getId() );
+    	log.info("persist student.getComputer().getId() : "+student.getComputer().getId() );
+    	log.info("persist mobile1.getId() : "+asusMobile.getId() );
+    	log.info("persist mobile2.getId() : "+samsungMobile.getId() );
+    	
+    	Assert.assertNotNull(student.getId());
+		Assert.assertNotNull(student.getLocker().getId());
+		Assert.assertNotNull(student.getComputer().getId());
+		Assert.assertNotNull(asusMobile.getId());
+		Assert.assertNotNull(samsungMobile.getId());
+    	    	
+    	tx.commit();
+ 
 		tx.begin();
 		
 		Student student2 = em.find(Student.class, student.getId());
 
 		student2.setComputer(labtop2);
-		student2.setPhone(mobile2);
+		student2.setPhone(samsungMobile);
 		em.persist(student2);
 		
         tx.commit();
@@ -82,12 +87,12 @@ public class Lab04Test {
         log.info("update student");
         		
         Student student3 	= 	em.find(Student.class, student2.getId());
+        
         em.refresh(student3);
         
-		log.info("find student : "+ student3 );
+		log.info("find student : "+ student3.toString() );
 		
 		Assert.assertEquals("DELL", student3.getComputer().getBrand());
-//		Assert.assertEquals("ASUS", student3.getPhone().getBrand());	Null Because @PrimaryKeyJoinColumn
 
 		tx.begin();
 		
@@ -97,10 +102,38 @@ public class Lab04Test {
 		
 		log.info("remove student");
 		
-		log.info("locker : "+ em.find(Locker.class, 1));	//	exists
-		log.info("labtop 1 : "+ em.find(Labtop.class, 1));//	exists	
-		log.info("labtop 2 : "+ em.find(Labtop.class, 2));	// delete from cascade
+		Assert.assertEquals(1, em.createQuery("Select m from Labtop m ", Labtop.class).getResultList().size());
+		Assert.assertEquals(1, em.createQuery("Select m from Locker m ", Locker.class).getResultList().size());
 		
+	}
+	
+	@Test
+	public void testPrimaryJoinColumns() throws Exception {
+		EntityTransaction tx 	= 	em.getTransaction();
+
+		tx.begin();
+
+		ParentId fatherId = new ParentId();
+		fatherId.setPersonId(1);
+		fatherId.setParentType(ParentType.FATHER);
+		
+		StudentParent father = new StudentParent();
+		father.setId(fatherId);
+		father.setName("dad");
+		
+		StudentParentAge fatherAge = new StudentParentAge();
+		fatherAge.setId(fatherId);
+		fatherAge.setAge(40L);
+		
+		father.setParentAge(fatherAge);
+		
+		em.persist(father);
+		
+		tx.commit();
+		
+		StudentParent studentParent = 	em.find(StudentParent.class, fatherId);
+		
+		Assert.assertEquals(40L,studentParent.getParentAge().getAge().longValue());
 		
 	}
 }

@@ -25,6 +25,11 @@ import lombok.Data;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 
+ * @see https://docs.oracle.com/javaee/6/api/index.html
+ * https://raresql.com/2012/05/01/difference-between-identity-and-sequence/
+ */
 @Entity
 @Table(name="people")
 @Data
@@ -33,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
 public class People  {
  
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private int id;
 

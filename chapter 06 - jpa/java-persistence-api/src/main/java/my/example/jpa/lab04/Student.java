@@ -20,6 +20,11 @@ import my.example.jpa.lab03.Person;
 @EqualsAndHashCode(callSuper=true)
 public class Student extends Person {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@OneToOne 
 	@JoinColumn(name="locker_id")
 	private Locker locker;
