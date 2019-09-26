@@ -44,7 +44,7 @@
 			<property name="eclipselink.logging.level" value="INFO" />
 		 	 
 		 	
-			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.util.DatabaseManagerSwing" />
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" />
             <property name="javax.persistence.jdbc.user" value="SA" />
             <property name="javax.persistence.jdbc.password" value="" />

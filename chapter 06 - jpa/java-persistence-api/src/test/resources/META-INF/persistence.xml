@@ -51,7 +51,7 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:file:testdb" />
 			 -->
 			
-			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.util.DatabaseManagerSwing" />
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" />
              
              
