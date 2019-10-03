@@ -4,11 +4,17 @@
 
 ## chapter 02 - maven workspace
 
+	#mvn archetype:generate -DgroupId=my.example -DartifactId=maven-java-project  
+	-DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+	
 maven-java-project
 - maven
 - maven-shade-plugin
 - slf4j + log4j
 - lombok
+
+	# mvn archetype:generate -DgroupId=my.example -DartifactId=maven-web-project 
+	 -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
 maven-web-project
 - slf4j + logback
