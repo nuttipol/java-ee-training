@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import lombok.extern.slf4j.Slf4j;
@@ -85,11 +86,13 @@ public class ProgrammerJdbcImpl implements ProgrammerDao {
 
 	@Override
 	public List<Programmer> findByCriteria(Programmer programmer) {
-		return null;
+		// No Implement
+		return Collections.emptyList();
 	}
 
 	@Override
 	public Programmer insert(Programmer programmer) throws SQLException {
+		// No Implement
 		return null;
 	}
 
