@@ -91,6 +91,7 @@
 		<p:fieldset legend="Children">
 		
 			<p:commandButton value="Add" action="#{personDialog.choosePerson}">
+				<f:param name="param1" value="123"></f:param>
 	       		<p:ajax event="dialogReturn" listener="#{memberBean.onAddChildren}" update="childrentb" />
 			</p:commandButton>
 			
