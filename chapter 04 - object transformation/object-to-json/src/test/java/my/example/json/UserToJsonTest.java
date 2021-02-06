@@ -18,10 +18,6 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import my.example.json.Department;
-import my.example.json.Role;
-import my.example.json.User;
-
 /**
  *  
  * @author Nuttipol

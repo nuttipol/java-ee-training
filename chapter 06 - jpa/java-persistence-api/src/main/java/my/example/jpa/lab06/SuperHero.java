@@ -24,6 +24,11 @@ import my.example.jpa.lab03.Person;
     @NamedQuery(name = "SuperHero.findByName", query = "SELECT s FROM SuperHero s WHERE s.name = :name")})
 public class SuperHero extends Person{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Column(name="hero_name",unique=true)
 	private String heroName;
 

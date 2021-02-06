@@ -23,10 +23,6 @@ import org.xmlunit.diff.ComparisonResult;
 import org.xmlunit.diff.DOMDifferenceEngine;
 import org.xmlunit.diff.DifferenceEngine;
 
-import my.example.xml.Department;
-import my.example.xml.Role;
-import my.example.xml.User;
-
 /**
  * https://github.com/xmlunit/xmlunit
  * @author Nuttipol

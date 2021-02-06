@@ -23,6 +23,11 @@ import my.example.jpa.lab03.Person;
     @NamedQuery(name = "Footballer.findByNumber", query = "SELECT f FROM Footballer f WHERE f.number = :numberId")})
 public class Footballer extends Person {
 	 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Footballer(){
 		
 	}

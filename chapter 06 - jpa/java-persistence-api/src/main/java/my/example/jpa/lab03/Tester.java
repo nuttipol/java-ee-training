@@ -12,6 +12,9 @@ import lombok.ToString;
 @Data
 @ToString
 @EqualsAndHashCode(callSuper=true)
-public class Tester extends Person {
+public class Tester extends Person {/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 }

@@ -93,7 +93,8 @@ public class People  {
     @Column(name="died_datetime")
     private java.util.Calendar diedDateTime;
     
-    private static int transient1; // not persistent because of static
+    @SuppressWarnings("unused")
+	private static int transient1; // not persistent because of static
     private final int transient2 = 0;  // not persistent because of final
     private transient int transient3; // not persistent because of transient
     @Transient 

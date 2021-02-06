@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
@@ -30,11 +31,11 @@
 	    </p:column>
 
 	  	<p:column headerText="Number of childrens">
-	        <h:outputText value="#{member.childrens.size()}" />
+	        <h:outputText value="#{fn:length(member.childrens)}" />
 	    </p:column>
 	    
 	    <p:column headerText="Number of contact persons">
-	        <h:outputText value="#{member.contactPersons.size()}" />
+	        <h:outputText value="#{fn:length(member.contactPersons)}" />
 	    </p:column>
 	    
 	</p:dataTable>
