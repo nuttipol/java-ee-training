@@ -33,7 +33,7 @@
 		<my.lombok>1.16.4</my.lombok>
 		
 		<!-- Test Scope -->
-		<my.junit>4.12</my.junit>
+		<my.junit>4.13.1</my.junit>
 	</properties>
 	
 	<dependencies>
