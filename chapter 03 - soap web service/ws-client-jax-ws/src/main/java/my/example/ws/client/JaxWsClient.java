@@ -24,7 +24,7 @@ public class JaxWsClient {
 			url = new URL(endPoint);
 			
 //			code for jaxws 
-			QName qName = new QName("http://my.example.com/", "CalculatorService");
+			QName qName = new QName("http://ws.summitthai.com/", "CalculatorService");
 	        Service service = Service.create(url, qName);
 	        Calculator hello = service.getPort(Calculator.class);
 			
