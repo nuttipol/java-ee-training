@@ -20,7 +20,7 @@ public class HttpUrlClient {
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Accept", "application/xml");
+			conn.setRequestProperty("Accept", "application/json");
 
 			if (conn.getResponseCode() != 200) {
 				throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
@@ -34,6 +34,7 @@ public class HttpUrlClient {
 				System.out.println(output);
 			}
 
+			String a = "[{\"uid\":\"58\",\"userId\":null,\"name\":\"Nuttipol\",\"department\":{\"id\":1,\"name\":\"SDD\"},\"roles\":[{\"id\":1,\"name\":\"Admin\"},{\"id\":2,\"name\":\"User\"}]},{\"uid\":\"36\",\"userId\":null,\"name\":\"Su\",\"department\":{\"id\":1,\"name\":\"SDD\"},\"roles\":[{\"id\":2,\"name\":\"User\"}]},{\"uid\":\"92\",\"userId\":null,\"name\":\"Kong\",\"department\":{\"id\":1,\"name\":\"SDD\"},\"roles\":[{\"id\":2,\"name\":\"User\"}]}]";
 			conn.disconnect();
 
 		} catch (MalformedURLException e) {

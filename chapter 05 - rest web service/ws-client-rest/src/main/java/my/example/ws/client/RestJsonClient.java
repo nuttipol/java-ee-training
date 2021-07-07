@@ -25,7 +25,7 @@ public class RestJsonClient {
 	 */
 	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException {
 		Client client = ClientBuilder.newClient();
-		WebTarget  webResource = client.target("http://localhost:8080/ws-server-rest/webapi/users/17");
+		WebTarget  webResource = client.target("http://localhost:8080/ws-server-rest/webapi/users/36");
 
 		Response response = webResource
 				.request(MediaType.APPLICATION_JSON)

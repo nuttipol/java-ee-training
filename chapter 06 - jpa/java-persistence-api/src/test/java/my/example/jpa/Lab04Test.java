@@ -107,6 +107,35 @@ public class Lab04Test {
 		
 	}
 	
+	
+	@Test
+	public void testPrimaryKeyJoinColumn() throws Exception {
+		
+		EntityTransaction tx 	= 	em.getTransaction();
+
+		tx.begin();
+		
+		Student student = new Student();
+		student.setName("Nuttipol");
+		student = em.merge(student);
+		
+		Mobile asusMobile	= new Mobile("ASUS");
+		asusMobile.setId(student.getId().intValue());
+		
+		em.persist(asusMobile);
+		
+		Assert.assertNotNull(student.getId());
+		 
+		tx.commit();
+		
+		Student student2 	= 	em.find(Student.class, student.getId());
+        
+        em.refresh(student2);
+        
+        Assert.assertEquals("ASUS",student.getPhone().getBrand());
+	}
+	
+	
 	@Test
 	public void testPrimaryJoinColumns() throws Exception {
 		EntityTransaction tx 	= 	em.getTransaction();
