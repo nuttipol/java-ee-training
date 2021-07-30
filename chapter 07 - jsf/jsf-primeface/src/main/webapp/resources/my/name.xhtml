@@ -11,7 +11,7 @@
     
     	<composite:attribute name="firstNameLabel" default="First Name"/>
     	<composite:attribute name="firstNameValue" />
-    	<composite:attribute name="lastNameLabel" default="last Name"/>
+    	<composite:attribute name="lastNameLabel" default="Last Name"/>
     	<composite:attribute name="lastNameValue" />
     	
     </composite:interface>
@@ -25,7 +25,7 @@
 			<p:inputText id="firstname" value="#{cc.attrs.firstNameValue}"
 				autocomplete="off" />
 
-			<p:outputLabel for="lastname" value="#{cc.attrs.firstNameValue}" />
+			<p:outputLabel for="lastname" value="#{cc.attrs.lastNameLabel}" />
 			<p:inputText id="lastname" value="#{cc.attrs.lastNameValue}"
 				autocomplete="off" />
 		</p:panelGrid>

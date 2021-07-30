@@ -47,11 +47,14 @@
 	
 	<div class="ui-fluid" style="width:80%">
 		<my:name firstNameValue="#{memberBean.member.firstName}"
-				lastNameValue="#{memberBean.member.lastName}" /> 
+				lastNameValue="#{memberBean.member.lastName}" 
+				firstNameLabel="ชื่อ"  
+				lastNameLabel="นามสกุล"  
+				 /> 
 		
-		<my:address id="address" addressLabel="Home Address" addressValue="#{memberBean.member.homeAddress}" /> 
+		<my:address id="address" addressLabel="Member Home Address" addressValue="#{memberBean.member.homeAddress}" /> 
 				 
-		<my:address id="work" addressLabel="Work Address" addressValue="#{memberBean.member.workAddress}" />
+		<my:address id="work" addressLabel="Member Work Address" addressValue="#{memberBean.member.workAddress}" />
 		
 	</div>
 	
