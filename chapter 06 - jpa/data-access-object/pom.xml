@@ -23,7 +23,7 @@
 		<my.lombok>1.16.4</my.lombok>
 		
 		<!-- Test Scope -->
-		<my.junit>4.12</my.junit>
+		<my.junit>4.13.1</my.junit>
 		<my.org.dbunit>2.6.0</my.org.dbunit> 
 		<my.org.hsqldb>2.4.1</my.org.hsqldb>
 		<my.sqlite-jdbc>3.25.2</my.sqlite-jdbc>
