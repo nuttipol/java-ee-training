@@ -30,7 +30,7 @@
 		<my.lombok>1.16.6</my.lombok>
 		
 		<!-- Test Scope -->
-		<my.junit>4.12</my.junit>
+		<my.junit>4.13.1</my.junit>
 		<my.jersey-hk2>2.28</my.jersey-hk2>
 	</properties>
 
