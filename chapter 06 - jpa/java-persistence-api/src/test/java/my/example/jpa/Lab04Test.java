@@ -41,8 +41,10 @@ public class Lab04Test {
 		
 		Mobile asusMobile	= new Mobile("ASUS");
     	Mobile samsungMobile	= new Mobile("LENOVO");
+    	asusMobile.setId(10);
+    	samsungMobile.setId(11);
     	
-		Labtop labtop1 = new Labtop("SONY");
+    	Labtop labtop1 = new Labtop("SONY");
 		Labtop labtop2 = new Labtop("DELL");
 		
 		Locker locker1 = new Locker("L1");
