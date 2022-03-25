@@ -1,0 +1,198 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>my.example</groupId>
+  <artifactId>cdi-web</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>cdi-web</name>
+  
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Maven Build Plugin Properties -->
+		<my.maven.compiler>3.0</my.maven.compiler>
+		<my.maven.war>3.3.1</my.maven.war>
+
+		<!-- Java Properties -->
+		<my.java>1.8</my.java>
+
+		<!-- Dependency Properties -->
+
+		<!-- Complied Scope  -->
+		<my.impl-operator>0.0.1-SNAPSHOT</my.impl-operator>
+		<my.impl-concat>0.0.1-SNAPSHOT</my.impl-concat>
+
+	    <my.weld-servlet-shaded>3.1.9.Final</my.weld-servlet-shaded>
+	    <my.javax.faces>2.3.2</my.javax.faces>
+		<my.org.primefaces>10.0.0</my.org.primefaces>
+
+		<my.javax.servlet.jstl>1.2</my.javax.servlet.jstl>
+		<my.javax.el.el-api>2.2</my.javax.el.el-api>
+		
+		<my.commons-beanutils>1.9.3</my.commons-beanutils> 
+
+		<!-- Provided Scope  -->
+		<my.javaee.web.api>8.0</my.javaee.web.api>
+		<my.lombok>1.18.22</my.lombok>
+		
+		<!-- Test Scope -->
+		<my.junit>5.8.2</my.junit>
+		<my.mockito-core>4.4.0</my.mockito-core>
+		
+	</properties>
+	
+	<dependencies>
+	
+		<!-- ######### Complied Scope ######### -->
+		
+		<!-- select one dependency from 'impl-concat' or 'impl-operator' -->
+		
+		<dependency>
+			<groupId>my.example</groupId>
+			<artifactId>impl-concat</artifactId>
+			<version>${my.impl-concat}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!--
+		<dependency>
+			<groupId>my.example</groupId>
+			<artifactId>impl-operator</artifactId>
+			<version>${my.impl-operator}</version>
+			<scope>compile</scope>
+		</dependency>
+		-->
+		
+		<!-- ========= CDI ========= --> 
+		
+		<!-- Weld (CDI Implementation) used this version for @Inject in @FacesConverter and @FacesValidator -->
+		 <dependency>
+		    <groupId>org.jboss.weld.servlet</groupId>
+		    <artifactId>weld-servlet-shaded</artifactId>
+		    <version>${my.weld-servlet-shaded}</version> 
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- ========= JSF ========= -->
+		<!-- JSF used this version for @Inject in @FacesConverter and @FacesValidator  -->
+    	<dependency>
+		   <groupId>org.glassfish</groupId>
+		   <artifactId>javax.faces</artifactId>
+		   <version>${my.javax.faces}</version>
+		   <scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${my.javax.servlet.jstl}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>${my.javax.el.el-api}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- ========= Primefaces ========= -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>${my.org.primefaces}</version>
+			<scope>compile</scope>
+		</dependency>
+		 
+		
+		<!-- ========= Addition Library ========= -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${my.commons-beanutils}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- ######### Provided Scope ######### -->		
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>${my.javaee.web.api}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- ######### Test Scope ######### -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${my.mockito-core}</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${my.maven.compiler}</version>
+					<configuration>
+						<source>${my.java}</source>
+						<target>${my.java}</target>
+						<compilerArguments>
+							<endorseddirs>${endorsed.dir}</endorseddirs>
+						</compilerArguments>
+					</configuration>
+				</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${my.maven.war}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<attachClasses>true</attachClasses>
+					<archiveClasses>true</archiveClasses>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
