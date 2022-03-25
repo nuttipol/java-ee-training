@@ -30,6 +30,7 @@
 		<my.commons-beanutils>1.9.4</my.commons-beanutils>
 		
 		<!-- Provided Scope  -->
+		<my.javax.servlet-api>3.0.1</my.javax.servlet-api>
 		<my.lombok>1.16.4</my.lombok>
 		
 		<!-- Test Scope -->
@@ -65,6 +66,13 @@
 		</dependency>
 		
 		<!-- Provided Scope  -->
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${my.javax.servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
