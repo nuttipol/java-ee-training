@@ -55,6 +55,7 @@ data-access-object
 ## chapter 07 - jsf
 java-server-face
 - maven project with Hello JSF
+
 jsf-primefaces
 - maven project with Basic HTTP Submit Form
 
