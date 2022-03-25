@@ -52,7 +52,14 @@ data-access-object
 - dao example
 - junit with dbunit 
 
+## chapter 07 - jsf
+java-server-face
+- maven project with Hello JSF
+jsf-primefaces
+- maven project with Basic HTTP Submit Form
+
 ## future chapter
 
-- JSF
+- CDI
+- JSF - Primefaces - CDI
 
