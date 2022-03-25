@@ -70,7 +70,7 @@ impl-concat
 - implement NameServiceable by concat method
 
 cdi-web
-- @Inject NameServiceable choosees impl-operator or impl-concat
+- @Inject NameServiceable chooses impl-operator or impl-concat on maven dependencies
 
 ## future chapter
  
