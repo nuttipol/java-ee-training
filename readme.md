@@ -59,8 +59,20 @@ java-server-face
 jsf-primefaces
 - maven project with Basic HTTP Submit Form
 
-## future chapter
+## chapter 08 - cdi
+interface-api
+- NameServiceable interface and Model
 
-- CDI
+impl-operator
+- implement NameServiceable by operator
+
+impl-concat
+- implement NameServiceable by concat method
+
+cdi-web
+- @Inject NameServiceable choosees impl-operator or impl-concat
+
+## future chapter
+ 
 - JSF - Primefaces - CDI
 
