@@ -58,6 +58,7 @@ java-server-face
 
 jsf-primefaces
 - maven project with Basic HTTP Submit Form
+- example of CRUD form
 
 ## chapter 08 - cdi
 interface-api
@@ -72,7 +73,9 @@ impl-concat
 cdi-web
 - @Inject NameServiceable chooses impl-operator or impl-concat on maven dependencies
 
-## future chapter
- 
-- JSF - Primefaces - CDI
+## chapter 09 - jsf-primefaces-cdi
+jsf-primefaces-cdi
+- full example of CRUD form
+- example of the composite component (JSF) , Primefaces Dialog
+
 
