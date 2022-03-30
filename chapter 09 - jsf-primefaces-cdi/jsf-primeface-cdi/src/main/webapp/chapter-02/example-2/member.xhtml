@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:my="http://java.sun.com/jsf/composite/my">
+
+<h:head>
+	<title>Member 2</title>
+</h:head>
+<h:body>
+	<h:form id ="formc">
+	
+	<p:dataTable var="member" value="#{memberBean.memberList}">
+	    <p:column headerText="Id">
+	        <h:outputText value="#{member.id}" />
+	    </p:column>
+	 
+	    <p:column headerText="Name">
+	        <h:outputText value="#{member.firstName} #{member.lastName}" />
+	    </p:column>
+	 
+	    <p:column headerText="Home Address">
+	        <h:outputText value="#{member.homeAddress.houseNo} #{member.homeAddress.street}" />
+	    </p:column>
+	  
+	    <p:column headerText="Work Address">
+	        <h:outputText value="#{member.workAddress.houseNo} #{member.workAddress.street}" />
+	    </p:column>
+
+	  	<p:column headerText="Number of childrens">
+	        <h:outputText value="#{fn:length(member.childrens)}" />
+	    </p:column>
+	    
+	    <p:column headerText="Number of contact persons">
+	        <h:outputText value="#{fn:length(member.contactPersons)}" />
+	    </p:column>
+	    
+	</p:dataTable>
+	
+	<br/>
+	<p:separator/>
+	<br/>
+	
+	<div class="ui-fluid" style="width:80%">
+		<my:name firstNameValue="#{memberBean.member.firstName}"
+				lastNameValue="#{memberBean.member.lastName}" 
+				firstNameLabel="ชื่อ"  
+				lastNameLabel="นามสกุล"  
+				 /> 
+		
+		<my:address id="address" addressLabel="Member Home Address" addressValue="#{memberBean.member.homeAddress}" /> 
+				 
+		<my:address id="work" addressLabel="Member Work Address" addressValue="#{memberBean.member.workAddress}" />
+		
+	</div>
+	
+	<div style="width:80%">
+		<p:fieldset legend="Children">
+		
+			<p:commandButton value="Add" action="#{memberBean.choosePerson}">
+	       		<p:ajax event="dialogReturn" listener="#{memberBean.onAddChildren}" update="childrentb" />
+			</p:commandButton>
+			
+			<p:dataTable id="childrentb" var="children" value="#{memberBean.member.childrens}">
+		    
+			    <p:column headerText="Name">
+			        <h:outputText value="#{children.firstName} #{children.lastName}" />
+			    </p:column>
+			 
+			    <p:column headerText="Address">
+			        <h:outputText value="#{children.homeAddress.houseNo} #{children.homeAddress.street}" />
+			    </p:column>
+			    
+			</p:dataTable>
+		</p:fieldset>
+	</div>
+	
+	<div style="width:80%">
+		<p:fieldset legend="Contact Person">
+		
+			<p:commandButton value="Add" action="#{memberBean.choosePerson}">
+	       		<p:ajax event="dialogReturn" listener="#{memberBean.onAddContactPerson}" update="contactpersontb" />
+			</p:commandButton>
+			
+			<p:dataTable id="contactpersontb" var="contactperson" value="#{memberBean.member.contactPersons}">
+		    
+			    <p:column headerText="Name">
+			        <h:outputText value="#{contactperson.firstName} #{contactperson.lastName}" />
+			    </p:column>
+			 
+			    <p:column headerText="Address">
+			        <h:outputText value="#{contactperson.homeAddress.houseNo} #{contactperson.homeAddress.street}" />
+			    </p:column>
+			    
+			</p:dataTable>
+		</p:fieldset>
+	</div>
+	
+	<br/>
+	<p:separator/>
+	<br/>
+			
+	<p:commandButton id="btn" value="save" update="@form" action="#{memberBean.saveAction}" />
+
+	</h:form>
+</h:body>
+</html>
