@@ -71,7 +71,7 @@ impl-concat
 - implement NameServiceable by concat method
 
 cdi-web
-- @Inject NameServiceable chooses impl-operator or impl-concat on maven dependencies
+- @Inject NameServiceable chooses impl-operator or impl-concat by maven dependencies
 
 ## chapter 09 - jsf-primefaces-cdi
 jsf-primefaces-cdi

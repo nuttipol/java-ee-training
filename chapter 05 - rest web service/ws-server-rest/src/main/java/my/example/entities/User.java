@@ -44,6 +44,7 @@ public class User {
 	
 	private String name;
 	
+	@XmlElement(name="department") // for User
 	private Department department;
 	
 	@XmlElementWrapper(name="roles")

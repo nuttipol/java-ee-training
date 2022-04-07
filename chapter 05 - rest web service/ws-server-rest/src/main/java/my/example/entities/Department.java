@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
 @Data
-@XmlRootElement(name = "department")
+@XmlRootElement(name = "department") // for return Department
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Department {
 	 
