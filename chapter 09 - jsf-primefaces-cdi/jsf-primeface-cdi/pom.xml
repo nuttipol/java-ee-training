@@ -37,7 +37,7 @@
 		<my.org.slf4j>1.7.36</my.org.slf4j>
 		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
 
-		<my.commons-beanutils>1.9.3</my.commons-beanutils> 
+		<my.commons-beanutils>1.9.4</my.commons-beanutils> 
 
 		<!-- Provided Scope  -->
 		<my.javaee.web.api>8.0</my.javaee.web.api>
