@@ -122,7 +122,7 @@ public class CrudBean implements Serializable{
 	public void resetUpdateBtnOnclick() {
 		try {
 			employeeEdit = new Employee();
-			BeanUtils.copyProperties(employeeEdit, selectedEmployee);
+			if (selectedEmployee!=null) BeanUtils.copyProperties(employeeEdit, selectedEmployee);
 		} catch (Exception e) {
 			log.error("BeanUtils.copyProperties Exception ",e);
 		}
