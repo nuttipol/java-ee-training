@@ -2,6 +2,7 @@ package my.example.ws;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -65,7 +66,7 @@ public class UserResource {
     @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public Response listUsers(@QueryParam("name") String name)  {
     	log.debug("listUsers entering");
-    	List<User>  userList;
+    	List<User>  userList = new ArrayList<>();
     	
 		if (name!=null){
 			userList = userDao.findUsersByName(name);
@@ -75,7 +76,8 @@ public class UserResource {
 		
     	//https://www.logicbig.com/tutorials/java-ee-tutorial/jax-rs/generic-entity.html
     	GenericEntity<List<User>> genericEntity = new GenericEntity<List<User>>(userList){}; 
-    
+    	
+    	log.debug("userList.size() : {}",userList.size());
 		return Response.ok().entity(genericEntity).build();
     }
 

@@ -21,8 +21,8 @@
 		<my.java>1.8</my.java>
 		
 		<!-- Complied Scope  -->
-		<my.jackson-databind>2.12.7</my.jackson-databind> 
-		<my.jersey-media-json-jackson>2.28</my.jersey-media-json-jackson>
+		<my.jackson-databind>2.13.3</my.jackson-databind> 
+		<my.jersey-media-json-jackson>2.36</my.jersey-media-json-jackson>
 		<my.org.slf4j>1.7.12</my.org.slf4j>
 		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
 		
@@ -31,7 +31,7 @@
 		
 		<!-- Test Scope -->
 		<my.junit>4.13.1</my.junit>
-		<my.jersey-hk2>2.28</my.jersey-hk2>
+		<my.jersey-hk2>2.36</my.jersey-hk2>
 	</properties>
 
 	<dependencies>
@@ -47,6 +47,12 @@
 		<dependency>
 		    <groupId>org.glassfish.jersey.media</groupId>
 		    <artifactId>jersey-media-json-jackson</artifactId>
+		    <version>${my.jersey-media-json-jackson}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-jaxb</artifactId>
 		    <version>${my.jersey-media-json-jackson}</version>
 		    <scope>compile</scope>
 		</dependency>
@@ -119,7 +125,7 @@
 			<properties>
 				<my.web.inf>src/test/resources/javaee6</my.web.inf>
 				<my.jakarta.ws.rs-api>2.1.5</my.jakarta.ws.rs-api>
-				<my.jersey.containers>2.28</my.jersey.containers>
+				<my.jersey.containers>2.36</my.jersey.containers>
 			</properties>
 			<build>
 				<pluginManagement>
@@ -208,9 +214,9 @@
 			</activation>
 			<properties>
 				<!-- Scope compile -->
-				<my.jersey.containers>2.28</my.jersey.containers>
-				<my.jersey-client>2.28</my.jersey-client>
-				<my.com.sun.xml.ws.jaxws-rt>2.2.10</my.com.sun.xml.ws.jaxws-rt>
+				<my.jersey.containers>2.36</my.jersey.containers>
+				<my.jersey-client>2.36</my.jersey-client>
+				<my.com.sun.xml.ws.jaxws-rt>2.3.5</my.com.sun.xml.ws.jaxws-rt>
 			</properties>
 			<build>
 				<pluginManagement>

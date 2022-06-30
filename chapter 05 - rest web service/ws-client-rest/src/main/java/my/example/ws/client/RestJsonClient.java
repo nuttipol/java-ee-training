@@ -33,8 +33,6 @@ public class RestJsonClient {
 
 		ObjectMapper mapper = new ObjectMapper();
 		
-		System.out.println("response.getStatus()="+response.getStatus());
-		
 		if (response.getStatus() == 200) {
 			User users = mapper.readValue((InputStream)response.getEntity() , User.class);
 			System.out.println(users);
