@@ -17,7 +17,7 @@
 		<my.maven.compiler>3.0</my.maven.compiler>
 		
 		<!-- Complied Scope  -->
-		<my.jackson-databind>2.12.6.1</my.jackson-databind>
+		<my.jackson-databind>2.13.3</my.jackson-databind>
 		<my.org.slf4j>1.7.12</my.org.slf4j>
 		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
 		
