@@ -22,7 +22,7 @@
 		<my.slf4j-log4j12>1.7.7</my.slf4j-log4j12>
 		
 		<!-- Provided Scope  -->
-		<my.lombok>1.16.4</my.lombok>
+		<my.lombok>1.18.24</my.lombok>
 		
 		<!-- Test Scope -->
 		<my.junit>4.13.1</my.junit>
