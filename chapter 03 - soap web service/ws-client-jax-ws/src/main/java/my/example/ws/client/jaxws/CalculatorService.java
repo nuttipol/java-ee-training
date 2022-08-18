@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CalculatorService", targetNamespace = "http://ws.example.my/", wsdlLocation = "http://localhost:8080/ws-server-jax-ws/Calculator?wsdl")
+@WebServiceClient(name = "CalculatorService", targetNamespace = "http://ws.summitthai.com/", wsdlLocation = "http://localhost:8080/ws-server-jax-ws/Calculator?wsdl")
 public class CalculatorService
     extends Service
 {
 
-    private final static URL CALCULATESERVICE_WSDL_LOCATION;
-    private final static WebServiceException CALCULATESERVICE_EXCEPTION;
-    private final static QName CALCULATESERVICE_QNAME = new QName("http://ws.example.my/", "CalculatorService");
+    private final static URL CALCULATORSERVICE_WSDL_LOCATION;
+    private final static WebServiceException CALCULATORSERVICE_EXCEPTION;
+    private final static QName CALCULATORSERVICE_QNAME = new QName("http://ws.summitthai.com/", "CalculatorService");
 
     static {
         URL url = null;
@@ -34,24 +34,24 @@ public class CalculatorService
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
-        CALCULATESERVICE_WSDL_LOCATION = url;
-        CALCULATESERVICE_EXCEPTION = e;
+        CALCULATORSERVICE_WSDL_LOCATION = url;
+        CALCULATORSERVICE_EXCEPTION = e;
     }
 
     public CalculatorService() {
-        super(__getWsdlLocation(), CALCULATESERVICE_QNAME);
+        super(__getWsdlLocation(), CALCULATORSERVICE_QNAME);
     }
 
     public CalculatorService(WebServiceFeature... features) {
-        super(__getWsdlLocation(), CALCULATESERVICE_QNAME, features);
+        super(__getWsdlLocation(), CALCULATORSERVICE_QNAME, features);
     }
 
     public CalculatorService(URL wsdlLocation) {
-        super(wsdlLocation, CALCULATESERVICE_QNAME);
+        super(wsdlLocation, CALCULATORSERVICE_QNAME);
     }
 
     public CalculatorService(URL wsdlLocation, WebServiceFeature... features) {
-        super(wsdlLocation, CALCULATESERVICE_QNAME, features);
+        super(wsdlLocation, CALCULATORSERVICE_QNAME, features);
     }
 
     public CalculatorService(URL wsdlLocation, QName serviceName) {
@@ -69,7 +69,7 @@ public class CalculatorService
      */
     @WebEndpoint(name = "CalculatorPort")
     public Calculator getCalculatorPort() {
-        return super.getPort(new QName("http://ws.example.my/", "CalculatorPort"), Calculator.class);
+        return super.getPort(new QName("http://ws.summitthai.com/", "CalculatorPort"), Calculator.class);
     }
 
     /**
@@ -81,14 +81,14 @@ public class CalculatorService
      */
     @WebEndpoint(name = "CalculatorPort")
     public Calculator getCalculatorPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://ws.example.my/", "CalculatorPort"), Calculator.class, features);
+        return super.getPort(new QName("http://ws.summitthai.com/", "CalculatorPort"), Calculator.class, features);
     }
 
     private static URL __getWsdlLocation() {
-        if (CALCULATESERVICE_EXCEPTION!= null) {
-            throw CALCULATESERVICE_EXCEPTION;
+        if (CALCULATORSERVICE_EXCEPTION!= null) {
+            throw CALCULATORSERVICE_EXCEPTION;
         }
-        return CALCULATESERVICE_WSDL_LOCATION;
+        return CALCULATORSERVICE_WSDL_LOCATION;
     }
 
 }

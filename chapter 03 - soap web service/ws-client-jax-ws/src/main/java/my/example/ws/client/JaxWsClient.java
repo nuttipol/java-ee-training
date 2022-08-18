@@ -28,7 +28,8 @@ public class JaxWsClient {
 	        Service service = Service.create(url, qName);
 	        Calculator hello = service.getPort(Calculator.class);
 			
-	        System.out.println("2 + 3 = "+hello.add(new BigDecimal("2"), new BigDecimal("3")));
+//	        System.out.println("2 + 3 = "+hello.add(new BigDecimal("2"), new BigDecimal("3")));
+	        System.out.println("get = "+hello.get(1).toString());
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

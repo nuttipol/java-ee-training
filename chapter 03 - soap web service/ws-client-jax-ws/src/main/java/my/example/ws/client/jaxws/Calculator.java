@@ -2,6 +2,7 @@
 package my.example.ws.client.jaxws;
 
 import java.math.BigDecimal;
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -42,5 +43,71 @@ public interface Calculator {
         BigDecimal arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         BigDecimal arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns my.example.ws.client.jaxws.Person
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "get", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.Get")
+    @ResponseWrapper(localName = "getResponse", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.GetResponse")
+    @Action(input = "http://ws.example.my/Calculator/getRequest", output = "http://ws.example.my/Calculator/getResponse")
+    public Person get(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "update", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.Update")
+    @ResponseWrapper(localName = "updateResponse", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.UpdateResponse")
+    @Action(input = "http://ws.example.my/Calculator/updateRequest", output = "http://ws.example.my/Calculator/updateResponse")
+    public void update(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Person arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "delete", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.Delete")
+    @ResponseWrapper(localName = "deleteResponse", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.DeleteResponse")
+    @Action(input = "http://ws.example.my/Calculator/deleteRequest", output = "http://ws.example.my/Calculator/deleteResponse")
+    public void delete(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "create", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.Create")
+    @ResponseWrapper(localName = "createResponse", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.CreateResponse")
+    @Action(input = "http://ws.example.my/Calculator/createRequest", output = "http://ws.example.my/Calculator/createResponse")
+    public void create(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Person arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<my.example.ws.client.jaxws.Person>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "search", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.Search")
+    @ResponseWrapper(localName = "searchResponse", targetNamespace = "http://ws.example.my/", className = "my.example.ws.client.jaxws.SearchResponse")
+    @Action(input = "http://ws.example.my/Calculator/searchRequest", output = "http://ws.example.my/Calculator/searchResponse")
+    public List<Person> search(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

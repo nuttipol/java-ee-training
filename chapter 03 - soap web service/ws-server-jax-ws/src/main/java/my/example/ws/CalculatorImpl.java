@@ -36,8 +36,10 @@ public class CalculatorImpl implements Calculator {
 
 	@Override
 	public Person get(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		Person p = new Person();
+		p.setId(id);
+		p.setName("A");
+		return p;
 	}
 
 	@Override

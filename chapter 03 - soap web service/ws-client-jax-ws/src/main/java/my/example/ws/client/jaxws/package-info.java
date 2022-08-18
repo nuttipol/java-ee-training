@@ -1,2 +1,2 @@
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://ws.summitthai.com/")
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://ws.example.my/")
 package my.example.ws.client.jaxws;
