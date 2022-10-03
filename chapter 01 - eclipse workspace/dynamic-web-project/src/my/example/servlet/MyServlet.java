@@ -30,13 +30,10 @@ public class MyServlet extends HttpServlet {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 /***** Set Response Content Type *****/
         response.setContentType("text/html");
-//        response.setContentType("text/plain");
         
         /***** Print The Response *****/
         PrintWriter out = response.getWriter();
@@ -55,16 +52,14 @@ public class MyServlet extends HttpServlet {
         out.println("</body></html>");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 	
 	private void printURL(HttpServletRequest request,PrintWriter out){
         out.println("<h1 align = \"center\">URL</h1>\n" +
-                "<table border = \"1\" align = \"center\">\n" +
+                "<table border = \"1\"  align = \"center\">\n" +
                 "<tr>\n" +
                 "<th>Name</th><th>Value</th>\n"+
                 "</tr>\n");
@@ -77,16 +72,16 @@ public class MyServlet extends HttpServlet {
         out.println("<tr><td>Path Info</td>\n<td> " + request.getPathInfo() + "</td></tr>\n");
         out.println("<tr><td>Query String</td>\n<td> " + request.getQueryString() + "</td></tr>\n");
         
-        out.println("</table>\n");
+        out.println("</table>\n ");
 	}
 
 	private void printMethod(HttpServletRequest request,PrintWriter out){
         out.println("<h1 align = \"center\">Method</h1>\n" +
                 "<table border = \"1\" align = \"center\">\n");
         
-        out.println("<tr><td>"+request.getMethod()+"</td></tr>\n");
+        out.println("<tr> <td>"+request.getMethod()+"</td></tr>\n");
         
-        out.println("</table>\n");
+        out.println("</table>\n ");
 	}
 	
 	private void printHeader(HttpServletRequest request,PrintWriter out){

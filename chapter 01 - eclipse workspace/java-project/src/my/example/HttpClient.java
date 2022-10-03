@@ -21,7 +21,7 @@ public class HttpClient {
 		conn.setDoOutput(true);
 		
 		String str =  "data input";
-		byte[] outputInBytes = str.getBytes("UTF-8");
+		byte[] outputInBytes = str.getBytes("UTF_8");
 		OutputStream os = conn.getOutputStream();
 		os.write( outputInBytes );    
 		os.close();
