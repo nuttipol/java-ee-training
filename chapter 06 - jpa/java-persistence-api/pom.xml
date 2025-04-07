@@ -26,7 +26,7 @@
 		
 		<!-- Test Scope -->
 		<my.junit>4.13.1</my.junit>
-		<my.sqlite-jdbc>3.25.2</my.sqlite-jdbc>
+		<my.sqlite-jdbc>3.41.2.2</my.sqlite-jdbc>
 		<my.org.hsqldb>2.4.1</my.org.hsqldb>
 	</properties>
 
