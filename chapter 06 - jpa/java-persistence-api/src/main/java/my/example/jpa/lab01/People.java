@@ -21,7 +21,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.Version;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,7 +33,8 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Entity
 @Table(name="people")
-@Data
+@Getter
+@Setter
 @ToString
 @Slf4j
 public class People  {

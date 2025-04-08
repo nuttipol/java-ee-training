@@ -3,11 +3,13 @@ package my.example.jpa.lab01;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Embeddable
-@Data
+@Getter
+@Setter
 @ToString
 public class Address {
 	

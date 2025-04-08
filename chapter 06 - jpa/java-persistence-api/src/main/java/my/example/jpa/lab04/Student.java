@@ -7,15 +7,17 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import my.example.jpa.lab03.Person;
 
 
 @Entity 
 @Table(name="student")
-@Data
+@Getter
+@Setter
 @ToString(exclude="computer")
 @EqualsAndHashCode(callSuper=true)
 public class Student extends Person {

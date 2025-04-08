@@ -9,12 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @MappedSuperclass
-@Data
+@Getter
+@Setter
 @ToString
 @EqualsAndHashCode(of="id")
 public class Person implements Serializable{ 

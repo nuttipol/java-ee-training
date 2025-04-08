@@ -83,7 +83,14 @@ public class Lab01Test {
 		
 		Assert.assertEquals(2, people2.getVersion());
 		
-		Assert.assertTrue(em.createQuery("Select m from People m where m.maritalStatus.code = 'S' ", People.class).getResultList().size() > 0 );
+		Assert.assertTrue(
+				em.createNativeQuery
+				("Select * from people m where m.marital_status_code = 'S' ").
+				getResultList().size() > 0 );
+		Assert.assertTrue(
+				em.createQuery
+				("Select m from People m where m.maritalStatus.code = 'S' ",
+						People.class).getResultList().size() > 0 );
 	}
 	
 	@Test

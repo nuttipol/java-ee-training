@@ -5,11 +5,13 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @ManagedBean
 @SessionScoped
-@Data
+@Getter
+@Setter
 public class HelloBean  implements Serializable {
 
 	private static final long serialVersionUID = 1L;

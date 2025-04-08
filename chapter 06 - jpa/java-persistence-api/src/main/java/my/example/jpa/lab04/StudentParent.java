@@ -8,15 +8,17 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.PrimaryKeyJoinColumns;
 import javax.persistence.Table;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 import my.example.jpa.lab02.ParentId;
 
 
 @Entity 
 @Table(name="student_parent")
-@Data
+@Getter
+@Setter
 @ToString
 @EqualsAndHashCode
 public class StudentParent  {
