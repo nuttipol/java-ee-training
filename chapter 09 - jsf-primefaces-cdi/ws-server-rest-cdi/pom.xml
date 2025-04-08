@@ -1,0 +1,213 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>my.example</groupId>
+	<artifactId>ws-server-rest-cdi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ws-server-rest-cdi</name>
+
+    <url>http://maven.apache.org</url>
+    
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- Maven Build Plugin Properties -->
+        <my.maven.compiler>3.0</my.maven.compiler>
+        <my.maven.war>3.3.1</my.maven.war>
+
+		<!-- Java Properties -->
+		<my.java>1.8</my.java>
+		
+		<!-- Complied Scope  -->
+		
+		<my.jersey.containers>2.36</my.jersey.containers>
+		<my.jersey-client>2.36</my.jersey-client>
+		
+		<my.cdi-api>2.0.SP1</my.cdi-api>
+	    <my.weld-servlet-shaded>3.1.9.Final</my.weld-servlet-shaded>
+	    
+		<my.jackson-databind>2.13.3</my.jackson-databind> 
+		<my.jersey-media-json-jackson>2.36</my.jersey-media-json-jackson>
+		<my.org.slf4j>1.7.12</my.org.slf4j>
+		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
+		
+		<!-- Provided Scope  -->
+		<my.lombok>1.16.6</my.lombok>
+		
+		<!-- Test Scope -->
+		<my.junit>4.13.1</my.junit>
+		<my.jersey-hk2>2.36</my.jersey-hk2>
+	</properties>
+
+	<dependencies>
+		<!-- Complied Scope  -->
+		
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<version>${my.cdi-api}</version> 
+			<scope>compile</scope>
+		</dependency>
+		
+		 <dependency>
+		    <groupId>org.jboss.weld.servlet</groupId>
+		    <artifactId>weld-servlet-shaded</artifactId>
+		    <version>${my.weld-servlet-shaded}</version> 
+			<scope>compile</scope>
+		</dependency>
+
+
+		<!--
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-grizzly2-http</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-grizzly2-servlet</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-jdk-http</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-simple-http</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-jetty-http</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.containers</groupId>
+		    <artifactId>jersey-container-jetty-servlet</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+		</dependency>
+		-->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+        </dependency>
+        
+	   <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+		    <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+        </dependency>
+        
+	 	<dependency>
+	        <groupId>org.glassfish.jersey.ext.cdi</groupId>
+	        <artifactId>jersey-cdi1x-servlet</artifactId>
+	        <version>${my.jersey.containers}</version>
+			<scope>compile</scope>
+	    </dependency>
+	    
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${my.jackson-databind}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<!-- for mapping json to pojo object automatic-->
+		<dependency>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-json-jackson</artifactId>
+		    <version>${my.jersey-media-json-jackson}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jersey.media</groupId>
+		    <artifactId>jersey-media-jaxb</artifactId>
+		    <version>${my.jersey-media-json-jackson}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency> 
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId> 
+		    <artifactId>jackson-jaxrs-json-provider</artifactId> 
+		    <version>${my.jackson-databind}</version>
+		    <scope>compile</scope>
+		</dependency>
+
+		
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${my.org.slf4j}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${my.ch.qos.logback}</version>
+			<scope>compile</scope>
+		</dependency> 
+		
+		<!-- Provided Scope  -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Test Scope -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+	 
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${my.maven.compiler}</version>
+				<configuration>
+					<source>${my.java}</source>
+					<target>${my.java}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${my.maven.war}</version>
+				<configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <attachClasses>true</attachClasses>
+                    <archiveClasses>true</archiveClasses>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+	  
+</project>
