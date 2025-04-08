@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="th"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Primefaces Form</title>
+</h:head>
+<h:body>
+<h:form>
+<h:panelGrid>
+	<p:outputLabel   value="Title :" />
+	<p:selectOneMenu value="#{pfBean.person.title}">
+		<f:selectItem itemValue="1" itemLabel="Mr."/>
+		<f:selectItem itemValue="2" itemLabel="Mrs."/>
+		<f:selectItem itemValue="3" itemLabel="Miss"/>
+		<f:selectItem itemValue="4" itemLabel="Ms."/>
+	</p:selectOneMenu>
+	<p:outputLabel 	 value="First Name :" />
+	<p:inputText 	 value="#{pfBean.person.firstName}"/>
+	<p:outputLabel   value="Last Name :" />
+	<p:inputText     value="#{pfBean.person.lastName}"/>
+	<p:outputLabel   value="Sex :" />
+	<p:selectOneButton  value="#{pfBean.person.sex}">
+		<f:selectItem itemValue="M" itemLabel="Male"/>
+		<f:selectItem itemValue="F" itemLabel="Female"/>
+	</p:selectOneButton >
+	
+	<p:selectOneRadio id="sor_contact" value="#{pfBean.contact}">
+		<f:selectItem itemValue="P" itemLabel="Phone"/>
+		<f:selectItem itemValue="M" itemLabel="e-Mail"/>
+		<p:ajax event="valueChange" listener="#{pfBean.changeContact}"
+			process="sor_contact" update="it_phone,it_mail"/>
+	</p:selectOneRadio>
+	
+	<p:outputLabel 	 value="Phone :" />
+	<p:inputText 	 id="it_phone" value="#{pfBean.person.phone}"
+						disabled="#{not(pfBean.contact eq 'P')}"/>
+	<p:outputLabel   value="e-Mail :" />
+	<p:inputText     id="it_mail" value="#{pfBean.person.email}"
+						disabled="#{not(pfBean.contact eq 'M')}"/>
+	
+	<p:commandButton value="Submit" 
+					 action="#{pfBean.submitButtonOnClick}"
+					 process="@form"
+					 update="@form"/>
+	<br/> 
+	<p:outputLabel   value="Title :#{pfBean.person.title}" />
+	<p:outputLabel   value="FullName :#{pfBean.fullName}" />
+	<p:outputLabel   value="Sex :#{pfBean.person.sex}" />
+	<p:outputLabel   value="Phone :#{pfBean.person.phone}" />
+	<p:outputLabel   value="e-Mail :#{pfBean.person.email}" />
+	 
+</h:panelGrid>
+</h:form>
+</h:body>
+</html>

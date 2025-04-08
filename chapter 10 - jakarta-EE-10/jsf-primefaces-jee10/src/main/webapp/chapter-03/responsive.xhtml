@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Responsive Example</title>
+</h:head>
+<h:body>
+
+	<h:outputStylesheet library="css" name="primeflex.min.css"/>
+	<h:outputStylesheet library="css" name="ui-grid-24-column.css"/>
+	<h:outputStylesheet library="css" name="ui-grid-50-column.css"/>
+	
+	<h:form id="formc">
+	
+	<p:tabView>
+		<p:tab title="PanelGrid">
+		<p:panel header="G1. PanelGrid Responsive (Grid + 12 ColumnClasses)" toggleable="true" >
+			<p:panelGrid columns="6" layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+		  		columnClasses=" ui-grid-col-2, ui-grid-col-3, ui-grid-col-1, 
+		  						ui-grid-col-2, ui-grid-col-3, ui-grid-col-1">
+				<p:outputLabel for="input_g11" value="field g11"/>
+				<p:inputText id="input_g11" required="true" />
+				<p:message for="input_g11" display="icon"/>
+		
+				<p:outputLabel for="input_g12" value="field g12"/>
+				<p:inputText id="input_g12"/>
+				<p:message for="input_g12" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="G2. PanelGrid Responsive (Grid + 12 ColumnClasses + MultiScreen)" toggleable="true" >
+			<p:panelGrid columns="6" layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+		  		columnClasses=" ui-g-12 ui-md-4 ui-lg-2, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-2 ui-lg-1, 
+		  						ui-g-12 ui-md-4 ui-lg-2, ui-g-12 ui-md-6 ui-lg-3, ui-g-12 ui-md-2 ui-lg-1">
+				<p:outputLabel for="input_g21" value="field g21"/>
+				<p:inputText id="input_g21" required="true" />
+				<p:message for="input_g21" display="icon"/>
+		
+				<p:outputLabel for="input_g22" value="field g22"/>
+				<p:inputText id="input_g22"/>
+				<p:message for="input_g22" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="G3. PanelGrid Responsive (Grid + 24 ColumnClasses)" toggleable="true" >
+			<p:panelGrid columns="12" layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+		  		columnClasses=" ui-grid-col-2, ui-grid-col-3, ui-grid-col-1,
+						  		ui-grid-col-2, ui-grid-col-3, ui-grid-col-1,
+						  		ui-grid-col-2, ui-grid-col-3, ui-grid-col-1, 
+		  						ui-grid-col-2, ui-grid-col-3, ui-grid-col-1">
+				<p:outputLabel for="input_g31" value="field g21"/>
+				<p:inputText id="input_g31" required="true" />
+				<p:message for="input_g31" display="icon"/>
+		
+				<p:outputLabel for="input_g32" value="field g32"/>
+				<p:inputText id="input_g32"/>
+				<p:message for="input_g32" display="icon"/>
+			
+				<p:outputLabel for="input_g33" value="field g33"/>
+				<p:inputText id="input_g33" required="true" />
+				<p:message for="input_g33" display="icon"/>
+		
+				<p:outputLabel for="input_g34" value="field g34"/>
+				<p:inputText id="input_g34"/>
+				<p:message for="input_g34" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="G4. PanelGrid Responsive (Grid + 24 ColumnClasses + ui-grid-24-column.css)" toggleable="true" >
+			<p:panelGrid columns="12" layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+		  		columnClasses=" ui-grid-col-new-2, ui-grid-col-new-3, ui-grid-col-new-1,
+						  		ui-grid-col-new-2, ui-grid-col-new-3, ui-grid-col-new-1,
+						  		ui-grid-col-new-2, ui-grid-col-new-3, ui-grid-col-new-1, 
+		  						ui-grid-col-new-2, ui-grid-col-new-3, ui-grid-col-new-1">
+				<p:outputLabel for="input_g41" value="field g41"/>
+				<p:inputText id="input_g41" required="true" />
+				<p:message for="input_g41" display="icon"/>
+		
+				<p:outputLabel for="input_g42" value="field g42"/>
+				<p:inputText id="input_g42"/>
+				<p:message for="input_g42" display="icon"/>
+			
+				<p:outputLabel for="input_g43" value="field g43"/>
+				<p:inputText id="input_g43" required="true" />
+				<p:message for="input_g43" display="icon"/>
+		
+				<p:outputLabel for="input_g44" value="field g44"/>
+				<p:inputText id="input_g44"/>
+				<p:message for="input_g44" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="G5. PanelGrid Responsive (Grid + 32 ColumnClasses (max 50)+ ui-grid-50-column.css)" toggleable="true" >
+			<p:panelGrid columns="32" layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+		  		columnClasses=" ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2,
+						  		ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2,
+						  		ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2,
+		  						ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2,
+		  						ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2, ui-grid-col-special50-1, ui-grid-col-special50-2,
+		  						ui-grid-col-special50-1, ui-grid-col-special50-2">
+				
+				<p:outputLabel for="@next" value="1"/>	<p:inputText />
+				<p:outputLabel for="@next" value="2"/>	<p:inputText />
+				<p:outputLabel for="@next" value="3"/>	<p:inputText />
+				
+				<p:outputLabel for="@next" value="4"/>	<p:inputText />
+				<p:outputLabel for="@next" value="5"/>	<p:inputText />
+				<p:outputLabel for="@next" value="6"/>	<p:inputText />
+				
+				<p:outputLabel for="@next" value="7"/>	<p:inputText />
+				<p:outputLabel for="@next" value="8"/>	<p:inputText />
+				<p:outputLabel for="@next" value="9"/>	<p:inputText />
+				
+				<p:outputLabel for="@next" value="10"/>	<p:inputText />
+				<p:outputLabel for="@next" value="11"/>	<p:inputText />
+				<p:outputLabel for="@next" value="12"/>	<p:inputText />
+				
+				<p:outputLabel for="@next" value="13"/>	<p:inputText />
+				<p:outputLabel for="@next" value="14"/>	<p:inputText />
+				<p:outputLabel for="@next" value="15"/>	<p:inputText />
+				
+				<p:outputLabel for="@next" value="16"/>	<p:inputText />
+				
+			</p:panelGrid>
+		</p:panel>
+		</p:tab>
+		<p:tab title="PrimeFlex">
+		<p:panel header="P1.PrimeFlex PanelGrid Responsive (PrimeFlex + 12 ColumnClasses) " toggleable="true" >
+		    <p:panelGrid columns="6" layout="flex" contentStyleClass="p-align-baseline ui-fluid"
+                 columnClasses="p-col-2, p-col-3, p-col-1, 
+                 				p-col-2, p-col-3, p-col-1">
+               	<p:outputLabel for="input_p11" value="field p11"/>
+				<p:inputText id="input_p11" required="true" />
+				<p:message for="input_p11" display="icon"/>
+		
+				<p:outputLabel for="input_p12" value="field p12"/>
+				<p:inputText id="input_p12"/>
+				<p:message for="input_p12" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="P2.PrimeFlex PanelGrid Responsive (PrimeFlex + 12 ColumnClasses) " toggleable="true" >
+		<!-- @media screen and (min-width: 576px) .p-sm 
+			@media screen and (min-width: 768px)  .p-md
+			@media screen and (min-width: 992px)  .p-lg
+			@media screen and (min-width: 1200px) .p-xl
+			-->
+		    <p:panelGrid columns="6" layout="flex" contentStyleClass="p-align-baseline ui-fluid"
+                 columnClasses="p-col-12 p-md-2 , p-col-12 p-md-3, p-col-12 p-md-1, 
+                 				p-col-12 p-md-2, p-col-12 p-md-3, p-col-12 p-md-1">
+               	<p:outputLabel for="input_p21" value="field p21"/>
+				<p:inputText id="input_p21" required="true" />
+				<p:message for="input_p21" display="icon"/>
+		
+				<p:outputLabel for="input_p22" value="field p22"/>
+				<p:inputText id="input_p22"/>
+				<p:message for="input_p22" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		
+		<p:panel header="P3.PrimeFlex PanelGrid Responsive (PrimeFlex + 12 ColumnClasses + MultiScreen) " toggleable="true" >
+		    <p:panelGrid columns="6" layout="flex" contentStyleClass="p-align-baseline ui-fluid"
+                 columnClasses="p-col-12 p-md-4 p-xl-2, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-2 p-xl-1, 
+                 				p-col-12 p-md-4 p-xl-2, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-2 p-xl-1">
+               	<p:outputLabel for="input_p31" value="field p31"/>
+				<p:inputText id="input_p31" required="true" />
+				<p:message for="input_p31" display="icon"/>
+		
+				<p:outputLabel for="input_p32" value="field p32"/>
+				<p:inputText id="input_p32"/>
+				<p:message for="input_p32" display="icon"/>
+			</p:panelGrid>
+		</p:panel>
+		</p:tab>
+		<p:tab title="PrimeFlex FormLayout">
+		<p:panel header="F1.PrimeFlex FormLayout Responsive (PrimeFlex + 12 ColumnClasses)" toggleable="true" >
+		     
+			 <div class="ui-fluid p-formgrid p-grid"> 
+			 	<div class="p-field p-col-12 p-md-2">
+               		<p:outputLabel for="input_f11" value="field f11" />
+               	</div>
+               	<div class="p-field p-col-12 p-md-3">
+					<p:inputText id="input_f11" required="true" />
+				</div>
+				<div class="p-field p-col-12 p-md-1">
+					<p:message for="input_f11" display="icon" />
+				</div>
+		
+				<div class="p-field p-col-12 p-md-2">
+					<p:outputLabel for="input_f12" value="field f12" />
+				</div>
+				<div class="p-field p-col-12 p-md-3">
+					<p:inputText id="input_f12" />
+				</div>
+				<div class="p-field p-col-12 p-md-1">
+					<p:message for="input_f12" display="icon" />
+				</div>
+				
+			</div>
+		</p:panel>
+		</p:tab>
+		</p:tabView>
+		
+		<p:commandButton value="submit" process="@form" update="@form"/>
+	</h:form>
+</h:body>
+</html>
+
+ 

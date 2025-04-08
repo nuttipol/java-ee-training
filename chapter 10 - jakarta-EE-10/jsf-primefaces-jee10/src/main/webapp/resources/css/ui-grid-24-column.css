@@ -1,0 +1,71 @@
+@media ( min-width : 641px) {
+.ui-grid-col-new-1 {width: 4.16666%;}          
+.ui-grid-col-new-2 {width: 8.33333%;}          
+.ui-grid-col-new-3 {width: 12.5%;}           
+.ui-grid-col-new-4 {width: 16.666665%;}        
+.ui-grid-col-new-5 {width: 20.83333%;}   		
+.ui-grid-col-new-6 {width: 25%;}  				
+.ui-grid-col-new-7 {width: 29.166665%;}		
+.ui-grid-col-new-8 {width: 33.33333%;}    		
+.ui-grid-col-new-9 {width: 37.5%;}				
+.ui-grid-col-new-10 {width: 41.66666%;}		
+.ui-grid-col-new-11 {width: 45.83333%;}		
+.ui-grid-col-new-12 {width: 50%;}				
+.ui-grid-col-new-13  {width: 54.16666%;}
+.ui-grid-col-new-14  {width: 58.33333%;}
+.ui-grid-col-new-15  {width: 62.5%;}
+.ui-grid-col-new-16  {width: 66.66666%;}
+.ui-grid-col-new-17  {width: 70.83333%;}
+.ui-grid-col-new-18  {width: 75%;}
+.ui-grid-col-new-19  {width: 79.16666%;}
+.ui-grid-col-new-20  {width: 83.33333%;}
+.ui-grid-col-new-21  {width: 87.5%;}
+.ui-grid-col-new-22  {width: 91.66666%;}
+.ui-grid-col-new-23  {width: 95.83333%;}
+.ui-grid-col-new-24  {width: 100%;}
+
+.ui-grid-col-new-1-r {width: 4.16666%;text-align: right;}          
+.ui-grid-col-new-2-r {width: 8.33333%;text-align: right;}          
+.ui-grid-col-new-3-r {width: 12.5%;text-align: right;}           
+.ui-grid-col-new-4-r {width: 16.666665%;text-align: right;}        
+.ui-grid-col-new-5-r {width: 20.83333%;text-align: right;}   		
+.ui-grid-col-new-6-r {width: 25%;text-align: right;}  				
+.ui-grid-col-new-7-r {width: 29.166665%;text-align: right;}		
+.ui-grid-col-new-8-r {width: 33.33333%;text-align: right;}    		
+.ui-grid-col-new-9-r {width: 37.5%;text-align: right;}				
+.ui-grid-col-new-10-r {width: 41.66666%;text-align: right;}		
+.ui-grid-col-new-11-r {width: 45.83333%;text-align: right;}		
+.ui-grid-col-new-12-r {width: 50%;text-align: right;}				
+.ui-grid-col-new-13-r  {width: 54.16666%;text-align: right;}
+.ui-grid-col-new-14-r  {width: 58.33333%;text-align: right;}
+.ui-grid-col-new-15-r  {width: 62.5%;text-align: right;}
+.ui-grid-col-new-16-r  {width: 66.66666%;text-align: right;}
+.ui-grid-col-new-17-r  {width: 70.83333%;text-align: right;}
+.ui-grid-col-new-18-r  {width: 75%;text-align: right;}
+.ui-grid-col-new-19-r  {width: 79.16666%;text-align: right;}
+.ui-grid-col-new-20-r  {width: 83.33333%;text-align: right;}
+.ui-grid-col-new-21-r  {width: 87.5%;text-align: right;}
+.ui-grid-col-new-22-r  {width: 91.66666%;text-align: right;}
+.ui-grid-col-new-23-r  {width: 95.83333%;text-align: right;}
+.ui-grid-col-new-24-r  {width: 100%;text-align: right;}
+ 
+.ui-grid-col-new-1,.ui-grid-col-new-2,.ui-grid-col-new-3,.ui-grid-col-new-4,.ui-grid-col-new-5,.ui-grid-col-new-6,
+.ui-grid-col-new-7,.ui-grid-col-new-8,.ui-grid-col-new-9,.ui-grid-col-new-10,.ui-grid-col-new-11,.ui-grid-col-new-12,
+.ui-grid-col-new-13,.ui-grid-col-new-14,.ui-grid-col-new-15,.ui-grid-col-new-16,.ui-grid-col-new-17,.ui-grid-col-new-18,
+.ui-grid-col-new-19,.ui-grid-col-new-20,.ui-grid-col-new-21,.ui-grid-col-new-22,.ui-grid-col-new-23,.ui-grid-col-new-24 {
+  	float: left;
+	box-sizing: border-box
+ }
+ 
+ 
+}
+
+@media ( max-width : 640px) {
+ .ui-grid-col-new-1,.ui-grid-col-new-2,.ui-grid-col-new-3,.ui-grid-col-new-4,.ui-grid-col-new-5,.ui-grid-col-new-6,
+.ui-grid-col-new-7,.ui-grid-col-new-8,.ui-grid-col-new-9,.ui-grid-col-new-10,.ui-grid-col-new-11,.ui-grid-col-new-12,
+.ui-grid-col-new-13,.ui-grid-col-new-14,.ui-grid-col-new-15,.ui-grid-col-new-16,.ui-grid-col-new-17,.ui-grid-col-new-18,
+.ui-grid-col-new-19,.ui-grid-col-new-20,.ui-grid-col-new-21,.ui-grid-col-new-22,.ui-grid-col-new-23,.ui-grid-col-new-24 {
+  box-sizing: border-box;
+  width: 100%;
+ }
+}

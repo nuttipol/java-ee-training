@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+    
+    <composite:interface>
+	    <composite:attribute name="attachment"  />
+    </composite:interface>
+	
+    <composite:implementation>
+		<p:dataTable id="dt_image" var="data"
+			value="#{cc.attrs.attachment.datas}">
+			<p:column headerText="Code">
+				<h:outputText value="#{data.fileName}" />
+			</p:column>
+		</p:dataTable>
+		
+		<p:fileUpload listener="#{cc.attrs.attachment.handleFileUpload}"
+			mode="advanced" dragDropSupport="false"
+			update="dt_image" sizeLimit="1000000" fileLimit="3"
+			allowTypes="/(\.|\/)(gif|jpe?g|png)$/" validateContentType="true"
+			auto="true" onupload="return confirm('Are you sure?')" />
+    </composite:implementation>
+	
+</html>
