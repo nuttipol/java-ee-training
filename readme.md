@@ -77,5 +77,12 @@ cdi-web
 jsf-primefaces-cdi
 - full example of CRUD form
 - example of the composite component (JSF) , Primefaces Dialog
+ws-server-rest-cdi
+- example of web service with CDI
 
+## chapter 10 - jakarta-EE-10
+jsf-primefaces-jee10
+- example of jsf-primefaces on Jakarta EE10
+ws-server-rest-jee10
+- example of web service on Jakarta EE10
 
