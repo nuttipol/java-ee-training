@@ -5,7 +5,7 @@
 
 	<groupId>my.example</groupId>
 	<artifactId>maven-java-project</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<properties>
@@ -14,12 +14,12 @@
 
 		<!-- Java Properties -->
 		<my.java>1.8</my.java>
-		<my.maven.compiler>3.0</my.maven.compiler>
-		
+		<my.maven.compiler>3.13.0</my.maven.compiler>
+
 		<!-- Complied Scope  -->
-		<my.org.slf4j>1.7.12</my.org.slf4j>
-		<my.ch.qos.logback>1.1.3</my.ch.qos.logback>
-		<my.slf4j-log4j12>1.7.7</my.slf4j-log4j12>
+		<my.org.slf4j>2.0.16</my.org.slf4j>
+		<my.ch.qos.logback>1.5.16</my.ch.qos.logback>
+		<my.slf4j-log4j12>2.0.17</my.slf4j-log4j12>
 		
 		<!-- Provided Scope  -->
 		<my.lombok>1.18.24</my.lombok>

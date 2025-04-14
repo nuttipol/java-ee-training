@@ -14,9 +14,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Maven Build Plugin Properties -->
-		<my.maven.compiler>3.0</my.maven.compiler>
-		<my.maven.war>3.3.1</my.maven.war>
-		<my.maven.resources>2.6</my.maven.resources>
+		<my.maven.compiler>3.13.0</my.maven.compiler>
+		<my.maven.war>3.4.0</my.maven.war>
+		<my.maven.resources>3.3.1</my.maven.resources>
 
 		<!-- Java Properties -->
 		<my.java>1.8</my.java>
@@ -24,9 +24,9 @@
 		<!-- Dependency Properties -->
 
 		<!-- Complied Scope  -->
-		<my.maven-java-project>0.0.1-SNAPSHOT</my.maven-java-project>
-		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
-		
+		<my.maven-java-project>1.0.0-SNAPSHOT</my.maven-java-project>
+		<my.ch.qos.logback>1.5.16</my.ch.qos.logback>
+
 		<!-- Provided Scope  -->
 		<my.javaee.web.api>6.0</my.javaee.web.api>
 	</properties>
@@ -52,7 +52,7 @@
 		    <version>${my.ch.qos.logback}</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<!-- Provided Scope  -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -60,7 +60,7 @@
 			<version>${my.javaee.web.api}</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -72,9 +72,7 @@
 				<configuration>
 					<source>${my.java}</source>
 					<target>${my.java}</target>
-					<compilerArguments>
-						<endorseddirs>${endorsed.dir}</endorseddirs>
-					</compilerArguments>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
