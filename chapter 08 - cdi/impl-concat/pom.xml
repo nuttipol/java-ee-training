@@ -22,6 +22,8 @@
 		<!-- Proviipa-idded Scope  -->
 		<my.lombok>1.18.22</my.lombok>
 		
+		<!-- Test Scope -->
+		<my.junit>4.13.1</my.junit>
 	</properties>
 
 	<dependencies> 
@@ -42,6 +44,18 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<!-- Test Scope -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.jboss.weld.se</groupId>
+		    <artifactId>weld-se-core</artifactId>
+		    <version>3.1.9.Final</version>
+		</dependency>
 	</dependencies>
 	
 	<build> 
