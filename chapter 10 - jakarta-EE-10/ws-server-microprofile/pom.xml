@@ -1,0 +1,132 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+    
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>my.example</groupId>
+	<artifactId>ws-server-microprofile</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>ws-server-microprofile</name>
+
+    <url>http://maven.apache.org</url>
+    
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- Maven Build Plugin Properties -->
+        <my.maven.compiler>3.13.0</my.maven.compiler>
+        <my.maven.war>3.4.0</my.maven.war>
+
+		<!-- Java Properties -->
+		<my.java>21</my.java>
+		
+		<!-- Complied Scope  -->
+		
+		<my.cdi-api>4.1.0</my.cdi-api>
+		<my.jakarta.enterprise.cdi-el-api>4.0.2</my.jakarta.enterprise.cdi-el-api>
+		<my.org.glassfish.jaxb.runtime>4.0.5</my.org.glassfish.jaxb.runtime>
+		<my.org.slf4j>2.0.16</my.org.slf4j>
+		<my.ch.qos.logback>1.5.16</my.ch.qos.logback>
+		
+		<!-- Provided Scope  -->
+	    <my.org.eclipse.microprofile>6.0</my.org.eclipse.microprofile>
+		<my.lombok>1.18.36</my.lombok>
+		
+		<!-- Test Scope -->
+		<my.junit>5.11.4</my.junit>
+	</properties>
+
+	<dependencies>
+		<!-- Complied Scope  -->
+		
+		<dependency>
+			<groupId>jakarta.enterprise</groupId>
+			<artifactId>jakarta.enterprise.cdi-el-api</artifactId>
+			<version>${my.cdi-api}</version> 
+			<scope>compile</scope>
+		</dependency>
+	    <dependency>
+	        <groupId>jakarta.xml.bind</groupId>
+	        <artifactId>jakarta.xml.bind-api</artifactId>
+	        <version>${my.jakarta.enterprise.cdi-el-api}</version>  
+			<scope>compile</scope>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.glassfish.jaxb</groupId>
+	        <artifactId>jaxb-runtime</artifactId>
+	        <version>${my.org.glassfish.jaxb.runtime}</version>
+			<scope>compile</scope>
+	    </dependency>
+
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${my.org.slf4j}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>${my.ch.qos.logback}</version>
+			<scope>compile</scope>
+		</dependency> 
+		
+		<!-- Provided Scope  -->
+	 	<dependency>
+		    <groupId>org.eclipse.microprofile</groupId>
+		    <artifactId>microprofile</artifactId>
+		    <version>${my.org.eclipse.microprofile}</version>
+			<scope>provided</scope>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${my.lombok}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Test Scope -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${my.junit}</version>
+			<scope>test</scope>
+		</dependency>
+	 
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${my.maven.compiler}</version>
+				<configuration>
+					<source>${my.java}</source>
+					<target>${my.java}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${my.maven.war}</version>
+				<configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <attachClasses>true</attachClasses>
+                    <archiveClasses>true</archiveClasses>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+	  
+</project>
