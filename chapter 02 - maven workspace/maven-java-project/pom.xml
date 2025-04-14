@@ -38,7 +38,7 @@
 			<scope>compile</scope>
 		</dependency>
 		
-		<!-- 
+		<!--
 		<dependency>
 		    <groupId>ch.qos.logback</groupId>
 		    <artifactId>logback-classic</artifactId>
@@ -48,10 +48,10 @@
 		-->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-log4j12</artifactId>
+		    <artifactId>slf4j-reload4j</artifactId>
 		    <version>${my.slf4j-log4j12}</version>
 		</dependency>
-		
+
 		<!-- Provided Scope  -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
