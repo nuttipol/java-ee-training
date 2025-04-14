@@ -5,7 +5,7 @@
   <groupId>my.example</groupId>
   <artifactId>jsf-primefaces-jee10</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>jsf-primefaces-jee10</name>
   
   <url>http://maven.apache.org</url>
@@ -42,7 +42,7 @@
 
 		<!-- Provided Scope  -->
 		<my.javaee.web.api>10.0.0</my.javaee.web.api>
-		<my.lombok>1.18.36</my.lombok>
+		<my.lombok>1.18.38</my.lombok>
 		
 		<!-- Test Scope -->
 		<my.junit>5.8.2</my.junit>
