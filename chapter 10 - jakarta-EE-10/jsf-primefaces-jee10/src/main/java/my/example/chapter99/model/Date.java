@@ -1,6 +1,7 @@
-package my.example.chapter03.model;
+package my.example.chapter99.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,7 +38,9 @@ public class Date implements Serializable{
     }
     
     public List<String> getMonths(){
-    	if (selectedDay.equals("31")) {
+    	if (selectedDay==null) {
+    		return new ArrayList<String>();
+    	}else if (selectedDay.equals("31")) {
     		return Arrays.asList("January", "March", "May", "July", "August", "October", "December");
     	}else if (selectedDay.equals("30")) {
     		return Arrays.asList("January", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");

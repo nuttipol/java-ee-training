@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>SelectOneMenu</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:panelGrid column="2">
+			<p:outputLabel for="@next" value="Grouping" />
+			<p:selectOneMenu id="group"
+				value="#{selectOneMenuView.countryGroup}">
+				<f:selectItem itemLabel="Select One" itemValue="" />
+				<f:selectItems value="#{selectOneMenuView.countriesGroup}" />
+			</p:selectOneMenu>
+			<br/>
+			<p:outputLabel for="@next" value="New Grouping" />
+			<p:selectOneMenu id="new_group"
+				value="#{selectOneMenuView.countryGroup}">
+				<f:selectItem itemLabel="Select One" itemValue=""  />
+				<f:selectItemGroups value="#{selectOneMenuView.continents}" var="continent" 
+						itemLabel="#{continent.name}">
+			        <f:selectItems value="#{continent.countries}" var="country" 
+			        	itemValue="#{country.code}" itemLabel="#{country.name}"  />
+			    </f:selectItemGroups>
+			</p:selectOneMenu>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>

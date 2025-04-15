@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Order Page</title>
+</h:head>
+<h:body>
+    <h2>Order - ViewScoped</h2>
+    <h:form id="formv">
+    	<f:passThroughAttribute name="autocomplete" value="off" />
+        <p:inputText value="#{orderViewBean.productName}" />
+        <p:commandButton value="Submit" action="#{orderViewBean.submit}" ajax="false" update="@form" />
+        <br/>
+        <h:outputText value="#{orderViewBean.products}" />
+    </h:form>
+
+    <hr/>
+
+    <h2>Order - ClientWindowScoped</h2>
+    <h:form id="formc">
+    	<f:passThroughAttribute name="autocomplete" value="off" />
+        <p:inputText value="#{orderWindowBean.productName}" />
+        <p:commandButton value="Submit" action="#{orderWindowBean.submit}" ajax="false" update="@form" />
+        <br/>
+        <h:outputText value="#{orderWindowBean.products}" />
+    </h:form>
+    
+    <hr/>
+    <h2>Order - SessionScoped</h2>
+    <h:form id="forms">
+    	<f:passThroughAttribute name="autocomplete" value="off" />
+        <p:inputText value="#{orderSessionBean.productName}" />
+        <p:commandButton value="Submit" action="#{orderSessionBean.submit}" ajax="false" update="@form" />
+        <br/>
+        <h:outputText value="#{orderSessionBean.products}" />
+    </h:form>
+</h:body>
+</html>
