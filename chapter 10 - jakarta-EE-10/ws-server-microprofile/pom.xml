@@ -21,10 +21,8 @@
 		<my.java>21</my.java>
 		
 		<!-- Complied Scope  -->
-		
-		<my.cdi-api>4.1.0</my.cdi-api>
-		<my.jakarta.enterprise.cdi-el-api>4.0.2</my.jakarta.enterprise.cdi-el-api>
-		<my.org.glassfish.jaxb.runtime>4.0.5</my.org.glassfish.jaxb.runtime>
+		 
+		<my.jakarta.enterprise.bind-api>4.0.2</my.jakarta.enterprise.bind-api>
 		<my.org.slf4j>2.0.16</my.org.slf4j>
 		<my.ch.qos.logback>1.5.16</my.ch.qos.logback>
 		
@@ -38,25 +36,13 @@
 
 	<dependencies>
 		<!-- Complied Scope  -->
-		
-		<dependency>
-			<groupId>jakarta.enterprise</groupId>
-			<artifactId>jakarta.enterprise.cdi-el-api</artifactId>
-			<version>${my.cdi-api}</version> 
-			<scope>compile</scope>
-		</dependency>
+		 
 	    <dependency>
 	        <groupId>jakarta.xml.bind</groupId>
 	        <artifactId>jakarta.xml.bind-api</artifactId>
-	        <version>${my.jakarta.enterprise.cdi-el-api}</version>  
+	        <version>${my.jakarta.enterprise.bind-api}</version>  
 			<scope>compile</scope>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.glassfish.jaxb</groupId>
-	        <artifactId>jaxb-runtime</artifactId>
-	        <version>${my.org.glassfish.jaxb.runtime}</version>
-			<scope>compile</scope>
-	    </dependency>
+	    </dependency> 
 
 		<dependency>
 		    <groupId>org.slf4j</groupId>
