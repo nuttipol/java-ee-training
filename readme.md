@@ -1,6 +1,3 @@
-ghp_eGktiRhMEcXTdGDG
-rtG2DVvbRVxAdu0m9LVY
-
 ## chapter 01 - eclipse workspace
 - java-project
 - dynamic-web-project
@@ -91,3 +88,5 @@ jsf-primefaces-jee10
 ws-server-rest-jee10
 - example of web service on Jakarta EE10
 
+ws-server-microprofile
+- example of web service on Jakarta EE10
