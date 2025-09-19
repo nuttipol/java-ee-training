@@ -19,7 +19,7 @@
 		<!-- Complied Scope  -->
 		<my.cdi-api>2.0.SP1</my.cdi-api>
 		<my.org.slf4j>1.7.36</my.org.slf4j>
-		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
+		<my.ch.qos.logback>1.2.13</my.ch.qos.logback>
 
 		<!-- Proviipa-idded Scope  -->
 		<my.lombok>1.18.22</my.lombok>
