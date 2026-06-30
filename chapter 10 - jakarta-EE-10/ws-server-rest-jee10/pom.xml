@@ -28,7 +28,7 @@
 		<my.cdi-api>4.1.0</my.cdi-api>
 	    <my.weld-servlet-shaded>6.0.1.Final</my.weld-servlet-shaded>
 	    
-		<my.jackson-databind>2.18.3</my.jackson-databind> 
+		<my.jackson-databind>2.22.0</my.jackson-databind> 
 		<my.jersey-media-json-jackson>3.1.10</my.jersey-media-json-jackson>
 		<my.org.slf4j>2.0.16</my.org.slf4j>
 		<my.ch.qos.logback>1.5.16</my.ch.qos.logback>
