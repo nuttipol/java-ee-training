@@ -31,7 +31,7 @@
 		<my.jackson-databind>2.13.4.2</my.jackson-databind> 
 		<my.jersey-media-json-jackson>2.36</my.jersey-media-json-jackson>
 		<my.org.slf4j>1.7.12</my.org.slf4j>
-		<my.ch.qos.logback>1.2.11</my.ch.qos.logback>
+		<my.ch.qos.logback>1.2.13</my.ch.qos.logback>
 		
 		<!-- Provided Scope  -->
 		<my.lombok>1.16.6</my.lombok>
